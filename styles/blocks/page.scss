@@ -1,7 +1,7 @@
 .page {
   scroll-behavior: smooth;
-  color: #ffffff;
-  background-color: #292626;
+  overflow-x: hidden;
+  background-color: $white-color;
 
   :has(.page__menu:target) {
     overflow: hidden;
@@ -9,14 +9,6 @@
 
   &__body {
     margin: 0;
-    padding-inline: 23px;
-    
-    @include onTablet {
-      padding-inline: 56px;
-    }
-    @include onLaptop {
-      padding-inline: 118px;
-    }
   }
 
   &__menu {

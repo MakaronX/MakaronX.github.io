@@ -1,0 +1,33 @@
+.footer {
+  font-family: "Nunito Sans", serif;
+  font-weight: 600;
+  background-color: $rose-color;
+  color: $white-color;
+
+  &__container {
+    display: flex;
+    padding: 50px 0 50px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  &__item {
+    width: 140px;
+
+    a {
+      text-decoration: none;
+      color: $white-color;
+      cursor: pointer;
+    }
+    p {
+      margin: 0;
+    }
+    span {
+      font-size: 12px;
+      font-weight: 300;
+      color: #665931;
+    }
+  }
+}
