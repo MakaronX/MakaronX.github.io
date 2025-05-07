@@ -554,8 +554,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 3.125rem;
   height: 3.75rem;
 }
+.services__item:nth-child(3) {
+  margin-top: 2.1875rem;
+}
 .services__item:nth-child(3) img {
-  padding-top: 1.25rem;
+  padding-top: 0.3125rem;
   width: 3.1875rem;
   height: 2.625rem;
 }
@@ -566,17 +569,15 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 3.1875rem;
 }
 .services__item:nth-child(4) img {
-  padding-top: 1.875rem;
   width: 4.6875rem;
-  height: 1.875rem;
+  height: 3.75rem;
 }
 .services__item:nth-child(4) p {
   width: 13.75rem;
 }
 .services__item:nth-child(5) img {
-  padding-top: 0.4375rem;
   width: 2.6875rem;
-  height: 3.3125rem;
+  height: 3.75rem;
 }
 .services__item:nth-child(5) p {
   width: 18.125rem;
