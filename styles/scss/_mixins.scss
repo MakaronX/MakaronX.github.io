@@ -1,0 +1,101 @@
+//Percent
+@function percent($px, $from) {
+  @return ($px / $from) * 100%;
+}
+
+//REM
+@function rem($px) {
+  @return ($px / 16) * 1rem;
+}
+
+//EM
+@function em($px, $current: 16) {
+  @return ($px / $current) * 1em;
+}
+
+//auto Font
+@mixin autoF($size, $multiplier: 1.2) {
+  font-size: $size;
+  line-height: $size * $multiplier;
+}
+
+//Adapt
+//Currency
+@mixin currency($sym) {
+  &::after {
+    content: "#{$sym}";
+  }
+}
+
+//Grids
+@mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+}
+
+//Adapt (clamp)
+@mixin adaptiveValue($property, $startSizes, $minSizes, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
+  $resultClamp: ();
+  $resultFallback: ();
+  $count: length($startSizes);
+
+  @for $i from 1 through $count {
+    $startSize: nth($startSizes, $i);
+    $minSize: nth($minSizes, $i);
+
+    $startSize: if($startSize == 0, 0.000001, $startSize);
+    $minSize: if($minSize == 0, 0.000001, $minSize);
+
+    $slope: ($startSize - $minSize) / ($widthFrom - $widthTo);
+    $intercept: $minSize - ($slope * $widthTo);
+    $fluidValue: rem($intercept) + " + " + ($slope * 100) + "vw";
+    $clamp: clamp(rem($minSize), #{$fluidValue}, rem($startSize));
+
+    $fallback: calc(#{rem($minSize)} + #{($startSize - $minSize) / 16} * (100vw - #{rem($widthTo)}) / #{($widthFrom / 16) - ($widthTo / 16)});
+
+    $resultClamp: append($resultClamp, $clamp);
+    $resultFallback: append($resultFallback, $fallback);
+  }
+
+  @supports (#{$property}: #{join($resultClamp, " ")}) {
+    #{$property}: #{join($resultClamp, " ")};
+  }
+
+  @supports not (#{$property}: #{join($resultClamp, " ")}) {
+    #{$property}: #{join($resultFallback, " ")};
+  }
+
+  @if $widthFrom != $containerWidth and $widthFrom != $maxWidth and not index((1 2), $keepSize) {
+    @media (min-width: em($widthFrom)) {
+      #{$property}: inherit;
+    }
+  }
+
+  @if $widthTo != $minWidth and not index((1 3), $keepSize) {
+    @media (max-width: em($widthTo)) {
+      #{$property}: inherit;
+    }
+  }
+}
+
+@mixin button {
+  height: rem(46);
+  border: none;
+  border-radius: rem(16);
+  font-size: em(18);
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg,#FD6542 24%,#E80370 53%, #5D0D56 85%);
+  cursor: pointer;
+  @include trans;
+}
+
+@mixin trans {
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+  }
+
+  & { transition: transform 0.2s ease-in-out; }
+}

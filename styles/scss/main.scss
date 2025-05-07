@@ -1,0 +1,393 @@
+.about {
+  padding-inline: rem(30);
+  background-color: $rose-color;
+
+  @media (min-width: rem(1024)) { padding-inline: 5%; }
+  @media (min-width: rem(1440)) { padding-inline: 5%; }
+
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: rem(768)) { flex-direction: row; }
+    @media (min-width: rem(1024)) { padding: 3% 0 5% 0; }
+    @media (min-width: rem(1440)) { padding: 2% 0 5% 0; }
+  }
+
+  &__item-one {
+    text-align: center;
+
+    @media (min-width: rem(768)) {
+      order: 1;
+      margin-bottom: rem(20);
+      padding-inline: rem(30);
+    }
+
+    @media (min-width: rem(1024)) {
+      margin-bottom: 0;
+      padding-inline: 5%;
+      h1 { margin-bottom: rem(60); }
+    }
+
+    @media (min-width: rem(1440)) {
+      padding-inline: 5%;
+      p { font-size: rem(20); }
+    }
+
+    h1 {
+      width: rem(200);
+      margin: rem(30) auto;
+      font-family: "Staatliches", sans-serif;
+      font-size: em(46);
+      line-height: rem(46);
+      color: $rose-sec-color;
+      span { color: $back; }
+    }
+
+    p {
+      font-family: "Open Sans", serif;
+      color: $back;
+    }
+  }
+
+  &__item-two {
+    margin-bottom: rem(40);
+    display: flex;
+    justify-content: center;
+    img { width: 50vw; }
+
+    @media (min-width: rem(768)) {
+      width: 100%;
+      align-items: center; 
+      img { width: 30vw; }
+    }
+
+    @media (min-width: rem(1024)) {
+      margin-top: 5%;
+      img {
+        width: 35vw;
+        max-width: rem(300);
+      }
+    }
+
+    @media (min-width: rem(1440)) {
+      margin-top: 5%;
+      img {
+        width: 35vw;
+        max-width: rem(400);
+      }
+    }
+  }
+}
+
+.services {
+  margin-top: rem(40);
+  padding-inline: rem(46);
+  font-family: "Open Sans", serif;
+
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    word-spacing: rem(20);
+    letter-spacing: rem(3);
+    font-family: "Staatliches", sans-serif;
+    font-size: em(46);
+    color: $rose-sec-color;
+  }
+
+  &__container {
+    margin-top: rem(40);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: rem(22);
+  }
+
+  &__item {
+    height: rem(280);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    img { object-fit: contain; }
+
+    h2 {
+      margin: 0;
+      padding-top: rem(10);
+      font-family: "Rubik Mono One", serif;
+      font-size: em(20);
+    }
+
+    p:first-of-type {
+      width: rem(170);
+      margin: rem(20) 0 0 0 ;
+    }
+  
+    p:last-of-type {
+      margin: 0;
+      padding-top: rem(30);
+    }
+  }
+
+  &__item:first-child img { width: rem(30); height: rem(60); }
+  &__item:nth-child(2) img { width: rem(50); height: rem(60); }
+  &__item:nth-child(3) {
+    img {
+      padding-top: rem(20);
+      width: rem(51);
+      height: rem(42);
+    }
+    p { width: rem(200); }
+    p:last-of-type { padding-top: rem(51); }
+  }
+
+  &__item:nth-child(4) {
+    img {
+      padding-top: rem(30);
+      width: rem(75);
+      height: rem(30);
+    }
+    p { width: rem(220); }
+  }
+
+  &__item:nth-child(5) {
+    img {
+      padding-top: rem(7);
+      width: rem(43);
+      height: rem(53);
+    }
+    p { width: rem(290); }
+    p:last-of-type { padding-top: rem(7); }
+  }
+
+  &__info {
+    margin-bottom: rem(20);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: rem(12);
+    img { height: rem(20); }
+  }
+}
+
+.photo {
+  background-image: url("../../img/main/photo/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  width: 100vw;
+  height: 50vh;
+
+  @media (min-width: rem(1024)) { .photo { height: 90vh; }}
+}
+
+.reviews {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  font-family: "Open Sans", serif;
+
+  h1 {
+    margin: rem(20) 0 rem(100) 0;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: rem(3);
+    font-family: "Staatliches", sans-serif;
+    font-size: em(46);
+    color: $rose-sec-color;
+    z-index: 2;
+  }
+
+  &__img {
+    position: absolute;
+    top: 5%;
+    left: 63%;
+    z-index: 0;
+    img { width: rem(200); }
+
+    @media (min-width: rem(768)) { 
+      top: 5%;
+      left: 55%;
+    }
+
+    @media (min-width: rem(1440)) { 
+      top: 3%;
+      left: 51%;
+      img { width: rem(300); }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-size: em(24);
+    z-index: 10;
+    cursor: pointer;
+    transform: translateY(-50%);
+
+    &__left { left: rem(10); transform: scaleX(1); }
+    &__right { right: rem(10); transform: scaleX(-1); }
+
+    .arrow-svg {
+      width: rem(30);
+      height: rem(30);
+      transition: transform 0.3s ease, fill 0.3s ease;
+
+      @media (min-width: rem(1440)) { display: none; }
+    }
+    
+    &:hover .arrow-svg { transform: scale(1.2); fill: #FF66C4; }
+  }
+
+  &__list {
+    display: flex;
+    gap: rem(20);
+    transition: transform 0.3s ease-in-out;
+    touch-action: pan-x;
+  }
+
+  &__item {
+    min-width: 100%;
+    text-align: center;
+    z-index: 2;
+
+    @media (min-width: rem(768)) {  min-width: 30%; }
+    @media (min-width: rem(1024)) {  min-width: 23%; }
+    @media (min-width: rem(1440)) {  min-width: 19%; }
+  }
+
+  &__author {
+    margin: 0;
+    font-size: em(30);
+    font-weight: 400;
+  }
+
+  &__info {
+    margin: rem(21) 0 rem(33) 0;
+    font-size: em(14);
+  }
+
+  &__rating {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: rem(5); 
+
+    img { width: rem(20); height: rem(19); }
+  }
+  
+  &__text { 
+    margin: rem(26) auto rem(20) auto; 
+    width: rem(200); 
+
+    @media (min-width: rem(1024)) {  margin: rem(26) auto rem(40) auto; }
+    @media (min-width: rem(1440)) {  margin: rem(26) auto rem(60) auto; }
+  }
+}
+
+.media {
+  margin-bottom: rem(10);
+
+  @media (min-width: rem(768)) { margin-bottom: rem(5); }
+  
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__block {
+    width: calc(100%);
+    padding-top: 65%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:nth-child(1) {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background-image: url('../../img/main/media/background.webp');
+  
+      p {
+        margin: 0;
+        position: absolute;
+        top: 30%;
+        width: rem(210);
+        text-transform: uppercase;
+        text-align: center;
+        line-height: em(46);
+        font-size: rem(46);
+        letter-spacing: rem(1);
+        font-family: "Staatliches", sans-serif;
+        color: $rose-sec-color;
+        z-index: 2;
+        span { color: $back; }
+      }
+  
+      img {
+        position: absolute;
+        top: 1%;
+        height: 100%;
+        width: auto;
+        z-index: 1;
+  
+        &:nth-child(2) { left: 0; }
+        &:last-child { right: 5%; }
+      }
+    }
+
+    &:nth-child(2) { background-image: url('../../img/main/media/2.jpeg'); }
+
+    &:nth-child(3) {
+      background-image: url('../../img/main/media/3.jpeg');
+      background-position: center 80%;
+    }
+
+    &:nth-child(4) {
+      background-image: url('../../img/main/media/4.webp');
+      background-position: center 35%;
+    }
+
+    &:nth-child(5) { background-image: url('../../img/main/media/5.webp'); }
+
+    &:nth-child(6) {
+      background-image: url('../../img/main/media/6.webp');
+      background-position: center 80%;
+    }
+    
+    @media (min-width: rem(500)) {
+      width: calc(50%);
+      padding-top: 50%;
+      &:nth-child(1) img:last-child { right: -10%; }
+      &:nth-child(2) { background-position: left; }
+      &:nth-child(3) { background-position: center 80%; }
+      &:nth-child(4) { background-position: center 35%; }
+      &:nth-child(5) { background-position: center 10%; }
+      &:nth-child(6) { background-position: center 80%; }
+    }
+
+    @media (min-width: rem(768)) {
+      width: calc(33.33% - rem(5));
+      margin-bottom: rem(5);
+      padding-top: 20%;
+      &__block:nth-child(1) img:last-child { right: 5%; }
+      &__block:nth-child(2) { background-position: left; }
+      &__block:nth-child(3) { background-position: center 80%; }
+      &__block:nth-child(4) { background-position: center 40%; }
+      &__block:nth-child(5) { background-position: center 45%; }
+      &__block:nth-child(6) { background-position: center 75%;}
+    }
+  }
+}

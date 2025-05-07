@@ -1,0 +1,11 @@
+@use "sass:math"; // SASS Libary
+
+// utils
+@import "./mixins";
+@import "./variebles";
+@import "./global";
+
+// styles
+@import "./header.scss";
+@import "./main.scss";
+@import "./footer.scss";

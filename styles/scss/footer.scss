@@ -1,0 +1,45 @@
+.footer {
+  font-family: "Nunito Sans", serif;
+  font-weight: 600;
+  background-color: $rose-color;
+  color: $back;
+
+  &__serv {
+    padding: rem(50) 0 rem(50) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: rem(25);
+
+    @media (min-width: rem(768)) {
+      padding: rem(50) 20% rem(50) 20%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @media (min-width: rem(1440)) { padding: rem(50) 35% rem(50) 35%; }
+  }
+
+  &__item {
+    width: rem(140);
+
+    @media (min-width: rem(768)) { height: rem(50); }
+
+    a {
+      text-decoration: none;
+      color: $back;
+      cursor: pointer;
+    }
+
+    p { margin: 0; }
+
+    span {
+      a {
+        font-size: rem(12);
+        font-weight: 300;
+        color: #665931;
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+// Main colors
+$main: #000000;
+$rose-color: #EFA5B6;
+$rose-sec-color: #FF66C4;
+$back: #F2F2F2;
+
+
+$fontSize: rem(16);
+
+// Page Width
+$minWidth: 320;
+$maxWidth: 1440;
+
+// Bounding container width (0 = no limit)
+$maxWidthContainer: 1300;
+
+// Container's overall padding (30 = 15px left and right, 0 = no padding)
+$containerPadding: 30;
+
+// Width of the first BreakPoint
+$containerWidth: $maxWidthContainer+$containerPadding;
+
+// BreakPoints
+$pc: em($containerWidth); // PCs, laptops, some tablets in landscape position
+$tablet: em(991.98); // Tablets, some phones in landscape position
+$mobile: em(767.98); // L phones
+$mobileSmall: em(479.98); // S Phones
+
+// Adaptive type:
+// 1 = responsive (container has no BreakPoints),
+// 2 = by break points (container changes its width by BreakPoints)
+$responsiveType: 1;
+
+@if ($responsiveType==1) {
+  [class*="__container"] {
+      margin: 0 auto;
+      @if ($maxWidthContainer>0) {
+          max-width: rem($maxWidthContainer);
+          box-sizing: content-box;
+      }
+      @else {
+          @if ($containerPadding>0) {
+              padding: 0 rem(math.div($containerPadding, 2));
+          }
+      }
+      @media (max-width: $pc) {
+        max-width: rem(1200);
+      }
+      @media (max-width: $tablet) {
+          max-width: rem(750);
+      }
+      @media (max-width: $mobile) {
+          max-width: none;
+          @if ($containerPadding>0 and $maxWidthContainer>0) {
+              padding: 0 rem(math.div($containerPadding, 2));
+          }
+      }
+  }
+}
