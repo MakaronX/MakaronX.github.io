@@ -1,0 +1,91 @@
+/* Модальное окно */
+.modal {
+  position: fixed;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 1000;
+  overflow: hidden;
+
+  &--active {
+    display: flex;
+  }
+
+  &__content {
+    overflow-y: auto;
+    padding: rem(20) rem(30);
+    max-width: rem(500);
+    width: 90%;
+    position: relative;
+    border-radius: rem(10);
+    box-shadow: 0 0 rem(15) rgba(0,0,0,0.3);
+    font-family: "Open Sans", serif;
+    font-weight: 500;
+    background: $back;
+
+    @media (max-width: $tablet) {
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    padding: rem(10);
+    top: rem(6); right: rem(20);
+    font-size: em(30);
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: em(20);
+    font-family: "Open Sans", serif;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__form .form {
+    &__group {
+      margin-top: rem(20);
+      margin-bottom: rem(15);
+
+      label {
+        display: block;
+        margin-bottom: rem(6);
+        font-weight: bold;
+      }
+
+      input, select, textarea {
+        width: 100%;
+        padding: rem(8) rem(10);
+        border: rem(1) solid #ccc;
+        border-radius: rem(6);
+        box-sizing: border-box;
+        font-size: em(16);
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: rem(60);
+      }
+    }
+
+    &__button {
+      padding: rem(12);
+      border: none;
+      border-radius: rem(6);
+      width: 100%;
+      font-size: em(16);
+      color: #fff;
+      background-color: $rose-color;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover { background-color: $rose-sec-color; } 
+    }
+  }
+}

@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik+Mono+One&family=Staatliches&display=swap" rel="stylesheet">
 </head>
-<!--#endregion -->s
+<!--#endregion -->
 <body class="page__body">
   <header class="header">
     <nav class="header__nav">
@@ -59,7 +59,7 @@
           <span>Amsterdam</span>
         </h1>
 
-        <button>Contact now</button>
+        <button id="openModalBtn">Make a request</button>
       </div>
     </div>
   </header>
@@ -93,6 +93,66 @@
       </ul>
     </nav>
   </aside>
+
+  <div id="modal" class="modal">
+    <div class="modal__content">
+      <span id="closeModalBtn" class="modal__close">&times;</span>
+      <h2 class="modal__title">Laat een verzoek achter</h2>
+  
+      <form class="modal__form form" id="petForm">
+        <div class="form__group">
+          <label>Naam</label>
+          <input type="text" name="name" required />
+        </div>
+  
+        <div class="form__group">
+          <label>Naam van het huisdier:</label>
+          <input type="text" name="pet" required />
+        </div>
+  
+        <div class="form__group">
+          <label>Leeftijd van het huisdier (in jaren):</label>
+          <input type="number" name="age" min="0" required />
+        </div>
+  
+        <div class="form__group">
+          <label>Geslacht:</label>
+          <select name="gender" required>
+            <option value="">Kies geslacht</option>
+            <option value="Jongen">Jongen</option>
+            <option value="Meisje">Meisje</option>
+          </select>
+        </div>
+  
+        <div class="form__group">
+          <label>Telefoonnummer:</label>
+          <input type="tel" name="phone" required />
+        </div>
+        
+        <div class="form__group">
+          <label>Dienst:</label>
+          <input type="text" name="service" required />
+        </div>
+  
+        <div class="form__group">
+          <label>Startdatum:</label>
+          <input type="date" name="start" required />
+        </div>
+  
+        <div class="form__group">
+          <label>Einddatum:</label>
+          <input type="date" name="end" required />
+        </div>
+  
+        <div class="form__group">
+          <label>Opmerking (optioneel):</label>
+          <textarea name="comment"></textarea>
+        </div>
+  
+        <button class="form__button" type="submit">Verstuur</button>
+      </form>
+    </div>
+  </div>
 
   <main>
     <section class="about" id="about">
@@ -215,7 +275,7 @@
     </section>
 
     <section class="media" id="media">
-      <div class="media__container">
+      <div class="media__cont">
         <div class="media__block">
           <p>Let’s Get to <span>contact Me</span></p>
           <img src="img/main/media/cat.svg" alt="cat">
@@ -233,7 +293,7 @@
   <footer class="footer" id="footer">
     <div class="footer__serv">
       <div class="footer__item">
-        <a href="#">WhatsApp link</a>
+        <a href="https://api.whatsapp.com/message/SPR7HA7LEE7EK1?autoload=1&app_absent=0">WhatsApp link</a>
       </div>
 
       <div class="footer__item">
