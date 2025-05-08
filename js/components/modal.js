@@ -3,6 +3,9 @@ export function modal() {
     const openBtn = document.getElementById("openModalBtn");
     const closeBtn = document.getElementById("closeModalBtn");
     const modal = document.getElementById("modal");
+    const form = document.getElementById("petForm");
+
+    if (!openBtn || !closeBtn || !modal || !form) return;
 
     openBtn.addEventListener("click", () => {
       modal.style.display = "flex";
@@ -18,20 +21,12 @@ export function modal() {
       }
     });
 
-    document.getElementById("petForm").addEventListener("submit", function (e) {
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
-      alert("Nice!");
-      modal.style.display = "none";
-      this.reset();
-    });
-  });
 
-  document.getElementById("petForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+      const formData = new FormData(this);
 
-    const formData = new FormData(this);
-
-    const message = `
+      const message = `
   🐾 Новая заявка!
   
   👤 Имя: ${formData.get("name")}
@@ -45,32 +40,33 @@ export function modal() {
   📝 Комментарий: ${formData.get("comment") || "—"}
   `;
 
-    const token = "8142977627:AAHkr-mT-a-LKd4r4EupdplQxwHEq-6MKbg";
-    const chatId = "403277084";
-    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+      const token = "8142977627:AAHkr-mT-a-LKd4r4EupdplQxwHEq-6MKbg";
+      const chatId = "403277084";
+      const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
-    fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: message,
-        parse_mode: "HTML",
-      }),
-    })
-      .then((res) => {
-        if (res.ok) {
-          alert("Done");
-          this.reset();
-          document.getElementById("modal").classList.remove("modal--active");
-          document.body.style.overflow = "";
-        } else {
-          alert("Error");
-        }
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: "HTML",
+        }),
       })
-      .catch((err) => {
-        console.error(err);
-        alert("Error.");
-      });
+        .then((res) => {
+          if (res.ok) {
+            alert("Done");
+            this.reset();
+            modal.style.display = "none";
+            document.body.style.overflow = "";
+          } else {
+            alert("Error");
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+          alert("Error.");
+        });
+    });
   });
 }
