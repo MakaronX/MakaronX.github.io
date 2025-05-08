@@ -30,20 +30,24 @@
 
       <ul class="header__nav__list">
         <li class="header__nav__link active">
-          <a href="">Home</a>
+          <a href="" data-lang-key="h.n__home">Huis</a>
         </li>
 
         <li class="header__nav__link">
-          <a href="#about">About me</a>
+          <a href="#about" data-lang-key="h.n__about">Over mij</a>
         </li>
 
         <li class="header__nav__link">
-          <a href="#services">Services</a>
+          <a href="#services" data-lang-key="h.n__services">Diensten</a>
         </li>
 
         <li class="header__nav__link">
           <a href="#footer">Contact</a>
         </li>
+
+        <div class="header__nav__flag">
+          <img src="img/header/flag-nl.svg" width="24px" height="16px" alt="nl">
+        </div>
       </ul>
     </nav>
 
@@ -53,13 +57,13 @@
       </div>
 
       <div class="header__main__side-two">
-        <h1>
-          BEST PET CARE
+        <h1 data-lang-key="h.m__h1">
+          BESTE HUISDIERVERZORGING
           <br>
           <span>Amsterdam</span>
         </h1>
 
-        <button id="openModalBtn">Make a request</button>
+        <button id="openModalBtn" data-lang-key="h.m__button">Een verzoek doen</button>
       </div>
     </div>
   </header>
@@ -79,14 +83,17 @@
     <nav class="menu__nav">
       <ul class="menu__list">
         <li class="menu__item">
-          <a class="menu__link" href="#about">ABOUT ME</a>
+          <a class="menu__link" href="#about" data-lang-key="h.n__about">Huis</a>
         </li>
+
         <li class="menu__item">
-          <a class="menu__link" href="#services">SERVICES</a>
+          <a class="menu__link" href="#services" data-lang-key="h.n__services">Diensten</a>
         </li>
+
         <li class="menu__item">
-          <a class="menu__link" href="#reviews">REVIEWS</a>
+          <a class="menu__link" href="#reviews" data-lang-key="menu__reviews">Recensies</a>
         </li>
+
         <li class="menu__item">
           <a class="menu__link" href="#footer">CONTACT</a>
         </li>
@@ -97,59 +104,59 @@
   <div id="modal" class="modal">
     <div class="modal__content">
       <span id="closeModalBtn" class="modal__close">&times;</span>
-      <h2 class="modal__title">Laat een verzoek achter</h2>
+      <h2 class="modal__title" data-lang-key="m.title">Laat een verzoek achter</h2>
   
       <form class="modal__form form" id="petForm">
         <div class="form__group">
-          <label>Naam</label>
+          <label data-lang-key="m.name">Naam</label>
           <input type="text" name="name" required />
         </div>
   
         <div class="form__group">
-          <label>Naam van het huisdier:</label>
+          <label data-lang-key="m.n__pet">Naam van het huisdier:</label>
           <input type="text" name="pet" required />
         </div>
   
         <div class="form__group">
-          <label>Leeftijd van het huisdier (in jaren):</label>
+          <label data-lang-key="m.year">Leeftijd van het huisdier (in jaren):</label>
           <input type="number" name="age" min="0" required />
         </div>
   
         <div class="form__group">
-          <label>Geslacht:</label>
+          <label data-lang-key="m.ges">Geslacht:</label>
           <select name="gender" required>
-            <option value="">Kies geslacht</option>
-            <option value="Jongen">Jongen</option>
-            <option value="Meisje">Meisje</option>
+            <option value="" data-lang-key="m.ges__k">Kies geslacht</option>
+            <option value="Jongen" data-lang-key="m.ges__j">Jongen</option>
+            <option value="Meisje" data-lang-key="m.ges__m">Meisje</option>
           </select>
         </div>
   
         <div class="form__group">
-          <label>Telefoonnummer:</label>
+          <label data-lang-key="m.number">Telefoonnummer:</label>
           <input type="tel" name="phone" required />
         </div>
         
         <div class="form__group">
-          <label>Dienst:</label>
+          <label data-lang-key="m.dienst">Dienst:</label>
           <input type="text" name="service" required />
         </div>
   
         <div class="form__group">
-          <label>Startdatum:</label>
+          <label data-lang-key="m.startdatum">Startdatum:</label>
           <input type="date" name="start" required />
         </div>
   
         <div class="form__group">
-          <label>Einddatum:</label>
+          <label data-lang-key="m.einddatum">Einddatum:</label>
           <input type="date" name="end" required />
         </div>
   
         <div class="form__group">
-          <label>Opmerking (optioneel):</label>
+          <label data-lang-key="m.opmerk">Opmerking (optioneel):</label>
           <textarea name="comment"></textarea>
         </div>
   
-        <button class="form__button" type="submit">Verstuur</button>
+        <button class="form__button" type="submit" data-lang-key="m.button">Verstuur</button>
       </form>
     </div>
   </div>
@@ -158,13 +165,13 @@
     <section class="about" id="about">
       <div class="about__container">
         <div class="about__item-one">
-          <h1>GET TO <span>KNOW ME</span></h1>
+          <h1 data-lang-key="a.title">LEER MIJ <span>KENNEN</span></h1>
 
-          <p>
-            My name is Sofia Rodina, and I have been living in the Netherlands for over three years. During this time, I have dedicated myself to pet care, offering services such as dog walking, dog boarding, and cat sitting. I have completed a course on dog behavior and psychology, which has deepened my understanding of our furry friends.
-            In the near future, I will be adding professional grooming services to my offerings to ensure your beloved pets look their best. Stay tuned for updates!
-            Animals have always played a significant role in my life. My friend was a dog breeder and dog handler, so I spent a lot of time with dogs from a young age, caring for both puppies and adult dogs. This experience has allowed me to develop a strong bond with animals, and I truly believe I can find the perfect approach for your pet.
-            I look forward to providing loving and attentive care to your furry family members!
+          <p data-lang-key="a.p">
+            Mijn naam is Sofia Rodina en ik woon al meer dan drie jaar in Nederland. In die tijd heb ik me toegelegd op de verzorging van huisdieren, met diensten als hondenuitlaatservice, hondenpension en kattensitten. Ik heb een cursus gevolgd over hondengedrag en psychologie, wat mijn begrip van onze harige vrienden heeft verdiept.
+            In de nabije toekomst zal ik professionele verzorgingsdiensten aan mijn aanbod toevoegen om ervoor te zorgen dat je geliefde huisdieren er op hun best uitzien. Blijf kijken voor updates!
+            Dieren hebben altijd een belangrijke rol in mijn leven gespeeld. Mijn vriend was hondenfokker en hondenuitlater, dus ik heb van jongs af aan veel tijd doorgebracht met honden en zowel voor puppy's als volwassen honden gezorgd. Door deze ervaring heb ik een sterke band met dieren ontwikkeld en ik geloof echt dat ik de perfecte aanpak voor uw huisdier kan vinden.
+            Ik kijk ernaar uit om liefdevolle en attente zorg te bieden aan uw harige familieleden!
           </p>
         </div>
 
@@ -175,55 +182,55 @@
     </section>
 
     <section class="services" id="services">
-      <h1>Dog and cat services</h1>
+      <h1 data-lang-key="s.title">Diensten voor honden en katten</h1>
 
       <div class="services__container">
         <div class="services__item">
           <img src="img/main/services/bags.png" alt="icons">
-          <h2>BOARDING</h2>
-          <p>Your furry stays by my house for one or more nights</p>
-          <p><b>55€</b>/per day</p>
+          <h2 data-lang-key="s.i-t-1">BOORD</h2>
+          <p data-lang-key="s.i-p-1">Je bontje blijft één of meerdere nachten bij mij slapen</p>
+          <p data-lang-key="s.i-b-1"><b>55€</b>/per dag</p>
         </div>
 
         <div class="services__item">
           <img src="img/main/services/sun.png" alt="icons">
-          <h2>Daycare</h2>
-          <p>Your furry stays by my house only for day, without night stay</p>
-          <p><b>50€</b>/per day</p>
+          <h2 data-lang-key="s.i-t-2">Dagopvang</h2>
+          <p data-lang-key="s.i-p-2">Je bontje blijft alleen overdag bij mij thuis, zonder nachtverblijf</p>
+          <p data-lang-key="s.i-b-2"><b>50€</b>/per dag</p>
         </div>
 
         <div class="services__item">
           <img src="img/main/services/house.png" alt="icons">
-          <h2>Babysitter at home</h2>
-          <p>I come to your house and stay with your lovely furry</p>
-          <p><b>60€</b>/per day</p>
+          <h2 data-lang-key="s.i-t-3">Babysitter aan huis</h2>
+          <p data-lang-key="s.i-p-3">Ik kom naar je huis en blijf bij je lieve harige</p>
+          <p data-lang-key="s.i-b-3"><b>60€</b>/per dag</p>
         </div>
 
         <div class="services__item">
           <img src="img/main/services/key.png" alt="icons">
-          <h2>Quick date</h2>
-          <p>Quick date for your furry, I come to your house to make short visit 30 minute</p>
-          <p><b>30€</b>/per visit</p>
+          <h2 data-lang-key="s.i-t-4">Snelle datum</h2>
+          <p data-lang-key="s.i-p-4">Snelle date voor je harige, ik kom naar je huis voor een kort bezoek van 30 minuten</p>
+          <p data-lang-key="s.i-b-4"><b>30€</b>/per bezoek</p>
         </div>
 
         <div class="services__item">
           <img src="img/main/services/paws.png" alt="icons">
-          <h2>Walking service</h2>
-          <p>I come to you to walk with your dog, also possible individual or group outdoor walks to the sea, in the forest, in certain parks for additional costs</p>
-          <p><b>30€</b>/per walk</p>
+          <h2 data-lang-key="s.i-t-5">Wandeldienst</h2>
+          <p data-lang-key="s.i-p-5">Ik kom naar je toe om met je hond te wandelen, ook mogelijk individuele of groepswandelingen naar zee, in het bos, in bepaalde parken tegen extra kosten</p>
+          <p data-lang-key="s.i-b-5"><b>30€</b>/per wandeling</p>
         </div>
       </div>
 
       <div class="services__info">
         <img src="img/main/services/paw.png" alt="paw">
-        <p>Discounts may apply depending on the numbers of days staying</p>
+        <p data-lang-key="s.paw">Kortingen kunnen van toepassing zijn afhankelijk van het aantal dagen verblijf</p>
       </div>
     </section>
 
     <section class="photo" id="photo"></section>
 
     <section class="reviews" id="reviews">
-      <h1>Reviews</h1>
+      <h1 data-lang-key="r.title">Recensies</h1>
       <div class="reviews__img">
         <img src="img/main/reviews/woof.png" alt="woof">
       </div>
@@ -235,37 +242,37 @@
       <div class="reviews__list">
         <div class="reviews__item">
           <h3 class="reviews__author">Catarina</h3>
-          <p class="reviews__info">Dog walking 22-12-23</p>
+          <p class="reviews__info" data-lang-key="r.i-d-1">Hond uitlaten 22-12-23</p>
           <p class="reviews__rating" data-rating="5"></p>
-          <p class="reviews__text">My dogs are usually difficult around new people, but with Sofia, they were immediately comfortable. She did a wonderful job with the walking and followed all the instructions I gave her, so I would definitely recommend her!</p>
+          <p class="reviews__text" data-lang-key="r.i-p-1">Mijn honden zijn meestal moeilijk in de buurt van nieuwe mensen, maar bij Sofia voelden ze zich meteen op hun gemak. Ze deed geweldig werk met het uitlaten en volgde alle instructies die ik haar gaf, dus ik zou haar zeker aanraden!</p>
         </div>
 
         <div class="reviews__item">
           <h3 class="reviews__author">Marta</h3>
-          <p class="reviews__info">Dog boarding 09-10-23</p>
+          <p class="reviews__info" data-lang-key="r.i-d-2">Hondenpension 09-10-23</p>
           <p class="reviews__rating" data-rating="5"></p>
-          <p class="reviews__text">Is the first time we left our dog with someone and Sofia has been the best! They had connection since the beginning and we fully trust her. Salsa has been really happy with her and we will definetelly repeat.</p>
+          <p class="reviews__text" data-lang-key="r.i-p-2">Dit is de eerste keer dat we onze hond bij iemand achterlaten en Sofia is de beste! Ze hadden vanaf het begin een band en we vertrouwen haar volledig. Salsa is heel blij met haar geweest en we zullen haar zeker nog eens herhalen.</p>
         </div>
 
         <div class="reviews__item">
           <h3 class="reviews__author">Thea</h3>
-          <p class="reviews__info">Babysitter at home 12-01-23</p>
+          <p class="reviews__info" data-lang-key="r.i-d-3">Babysitter aan huis 12-01-23</p>
           <p class="reviews__rating" data-rating="5"></p>
-          <p class="reviews__text">Sofia has taken good care of our cocker spaniel Simba and our house! Very sweet young lady. They both had an immediate click. Via films and photo's she informed us well. We highly recommend Sofia.</p>
+          <p class="reviews__text" data-lang-key="r.i-p-3">Sofia has taken good care of our cocker spaniel Simba and our house! Very sweet young lady. They both had an immediate click. Via films and photo's she informed us well. We highly recommend Sofia.</p>
         </div>
 
         <div class="reviews__item">
           <h3 class="reviews__author">Elizabeth</h3>
-          <p class="reviews__info">Dog boarding 04-10-24</p>
+          <p class="reviews__info" data-lang-key="r.i-d-4">Hondenpension 04-10-24</p>
           <p class="reviews__rating" data-rating="5"></p>
-          <p class="reviews__text">Sofia provided excellent care for our little Roosevelt. It was our first time leaving him with a sitter, and her kindness and thoughtfulness reassured us. The photo updates she sent melted away our initial worries and showed her exceptional care. Roosevelt had a fantastic time making a new friend. We highly recommend Sofia's dog-sitting services. 10/10 stars & thank you!</p>
+          <p class="reviews__text" data-lang-key="r.i-p-4">Sofia zorgde uitstekend voor onze kleine Roosevelt. Het was de eerste keer dat we hem bij een oppas achterlieten en haar vriendelijkheid en attentheid stelden ons gerust. De foto-updates die ze stuurde, deden onze aanvankelijke zorgen verdwijnen en toonden haar uitzonderlijke zorg. Roosevelt had een fantastische tijd met het maken van een nieuwe vriend. We bevelen Sofia's oppasdiensten ten zeerste aan. 10/10 sterren & bedankt!</p>
         </div>
 
         <div class="reviews__item">
           <h3 class="reviews__author">Mahmoud</h3>
-          <p class="reviews__info">Dog walking 22-12-23</p>
+          <p class="reviews__info" data-lang-key="r.i-d-5">Hond uitlaten 22-12-23</p>
           <p class="reviews__rating" data-rating="5"></p>
-          <p class="reviews__text">Sofia was just amazing! Shes very reliable, punctual, great communication and handled our big German Shephard so gently. You know she was great because our puppy would wait for her by the window and greet her with kisses and hugs. Definitely recommend her 🙌 Thank you so much!</p>
+          <p class="reviews__text" data-lang-key="r.i-p-5">Sofia was gewoon geweldig! Ze is erg betrouwbaar, punctueel, goede communicatie en ze ging zo zachtjes om met onze grote Duitse Shephard. Je weet dat ze geweldig was omdat onze puppy bij het raam op haar wachtte en haar begroette met kusjes en knuffels. Ik raad haar zeker aan 🙌 Heel erg bedankt!</p>
         </div>
       </div>
 
@@ -277,7 +284,7 @@
     <section class="media" id="media">
       <div class="media__cont">
         <div class="media__block">
-          <p>Let’s Get to <span>contact Me</span></p>
+          <p data-lang-key="media.title">Laten We <span>contact Opnemen</span></p>
           <img src="img/main/media/cat.svg" alt="cat">
           <img src="img/main/media/dog.svg" alt="dog">
         </div>
@@ -308,6 +315,6 @@
     </div>
   </footer>
 
-  <script src="js/script.js?v=1.01"></script>
+  <script type="module" src="js/script.js?v=1.01"></script>
 </body>
 </html>

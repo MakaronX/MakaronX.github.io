@@ -206,6 +206,15 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #EFA5B6;
   }
 }
+.header__nav__flag {
+  order: 3;
+  cursor: pointer;
+}
+@media (max-width: 47.99875em) {
+  .header__nav__flag {
+    order: 1;
+  }
+}
 .header__main {
   margin-bottom: 1.875rem;
   display: flex;
@@ -366,6 +375,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.125rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
+  text-transform: uppercase;
   color: #F2F2F2;
 }
 .menu__link::after {

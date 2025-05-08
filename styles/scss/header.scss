@@ -83,6 +83,15 @@
         &:hover { background-color: $rose-color; }
       }
     }
+
+    &__flag {
+      order: 3;
+      cursor: pointer;
+
+      @media (max-width: $mobile) {
+        order: 1;
+      }
+    }
   }
 
   &__main {
@@ -241,6 +250,7 @@
     letter-spacing: rem(2);
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
+    text-transform: uppercase;
     color: $back;
   
     &::after {
