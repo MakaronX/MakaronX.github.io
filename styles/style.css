@@ -842,10 +842,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .media {
-  margin-bottom: 0.625rem;
+  display: none;
+  margin-bottom: 0;
 }
 @media (min-width: 48rem) {
   .media {
+    display: block;
     margin-bottom: 0.3125rem;
   }
 }
@@ -853,6 +855,15 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+@media (max-width: 47.9375rem) {
+  .media__cont {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.625rem;
+  }
 }
 .media__block {
   width: 100%;
@@ -862,12 +873,13 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
 }
 .media__block:nth-child(1) {
-  display: flex;
+  background-image: url("../../img/main/media/background.webp");
   position: relative;
+  display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1.25rem;
   overflow: hidden;
-  background-image: url("../../img/main/media/background.webp");
 }
 .media__block:nth-child(1) p {
   margin: 0;
@@ -888,16 +900,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 .media__block:nth-child(1) img {
   position: absolute;
-  top: 1%;
-  height: 100%;
-  width: auto;
+  width: 45%;
+  height: auto;
+  opacity: 0.4;
   z-index: 1;
 }
 .media__block:nth-child(1) img:nth-child(2) {
   left: 0;
+  top: 10%;
 }
 .media__block:nth-child(1) img:last-child {
-  right: 5%;
+  right: 0;
+  top: 10%;
 }
 .media__block:nth-child(2) {
   background-image: url("../../img/main/media/2.jpeg");
@@ -947,23 +961,120 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.3125rem;
     padding-top: 20%;
   }
-  .media__block__block:nth-child(1) img:last-child {
+  .media__block:nth-child(1) img:last-child {
     right: 5%;
   }
-  .media__block__block:nth-child(2) {
+  .media__block:nth-child(2) {
     background-position: left;
   }
-  .media__block__block:nth-child(3) {
+  .media__block:nth-child(3) {
     background-position: center 80%;
   }
-  .media__block__block:nth-child(4) {
+  .media__block:nth-child(4) {
     background-position: center 40%;
   }
-  .media__block__block:nth-child(5) {
+  .media__block:nth-child(5) {
     background-position: center 45%;
   }
-  .media__block__block:nth-child(6) {
+  .media__block:nth-child(6) {
     background-position: center 75%;
+  }
+}
+@media (max-width: 47.9375rem) {
+  .media__block {
+    min-width: 80%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    padding-top: 100%;
+  }
+}
+
+.mediaPc {
+  display: block;
+}
+@media (min-width: 47.9375rem) {
+  .mediaPc {
+    display: none;
+  }
+}
+.mediaPc .mediaPc__slider {
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.mediaPc .mediaPc__wrapper {
+  display: flex;
+}
+.mediaPc .mediaPc__block {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+.mediaPc .mediaPc__block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mediaPc .mediaPc__block--text .mediaPc__overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: #d13d91;
+  width: 100%;
+  padding: 20px;
+}
+.mediaPc .mediaPc__block--text .mediaPc__overlay h2 {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Open Sans", serif;
+  text-align: center;
+  color: #FF66C4;
+  z-index: 2;
+}
+.mediaPc .mediaPc__block--text .mediaPc__overlay h2 span {
+  color: #fff;
+}
+.mediaPc .mediaPc__block--text .mediaPc__background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  z-index: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #d13d91 !important;
+}
+
+.whatsApp {
+  position: fixed;
+  display: none;
+  right: 0.9375rem;
+  bottom: 0.9375rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  background-color: rgb(37, 211, 102);
+  cursor: pointer;
+}
+.whatsApp img {
+  width: 1.875rem;
+  filter: invert(1);
+}
+@media (max-width: 61.99875em) {
+  .whatsApp {
+    display: flex;
   }
 }
 

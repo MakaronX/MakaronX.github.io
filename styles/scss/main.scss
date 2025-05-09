@@ -299,14 +299,26 @@
 }
 
 .media {
-  margin-bottom: rem(10);
+  display: none;
+  margin-bottom: 0;
 
-  @media (min-width: rem(768)) { margin-bottom: rem(5); }
+  @media (min-width: rem(768)) { 
+    display: block;
+    margin-bottom: rem(5); 
+  }
   
   &__cont {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media (max-width: rem(767)) {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: rem(10);
+    }
   }
 
   &__block {
@@ -317,13 +329,14 @@
     background-repeat: no-repeat;
 
     &:nth-child(1) {
-      display: flex;
+      background-image: url('../../img/main/media/background.webp');
       position: relative;
+      display: flex;
       justify-content: center;
       align-items: center;
+      padding: rem(20); 
       overflow: hidden;
-      background-image: url('../../img/main/media/background.webp');
-  
+
       p {
         margin: 0;
         position: absolute;
@@ -342,13 +355,13 @@
   
       img {
         position: absolute;
-        top: 1%;
-        height: 100%;
-        width: auto;
+        width: 45%;
+        height: auto;
+        opacity: 0.4;
         z-index: 1;
-  
-        &:nth-child(2) { left: 0; }
-        &:last-child { right: 5%; }
+    
+        &:nth-child(2) { left: 0; top: 10%; }
+        &:last-child { right: 0; top: 10%; }
       }
     }
 
@@ -386,12 +399,106 @@
       width: calc(33.33% - rem(5));
       margin-bottom: rem(5);
       padding-top: 20%;
-      &__block:nth-child(1) img:last-child { right: 5%; }
-      &__block:nth-child(2) { background-position: left; }
-      &__block:nth-child(3) { background-position: center 80%; }
-      &__block:nth-child(4) { background-position: center 40%; }
-      &__block:nth-child(5) { background-position: center 45%; }
-      &__block:nth-child(6) { background-position: center 75%;}
+      &:nth-child(1) img:last-child { right: 5%; }
+      &:nth-child(2) { background-position: left; }
+      &:nth-child(3) { background-position: center 80%; }
+      &:nth-child(4) { background-position: center 40%; }
+      &:nth-child(5) { background-position: center 45%; }
+      &:nth-child(6) { background-position: center 75%;}
+    }
+
+    @media (max-width: rem(767)) {
+      min-width: 80%;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      padding-top: 100%;
     }
   }
+}
+
+.mediaPc {
+  display: block;
+  
+  @media (min-width: rem(767)) {
+    display: none;
+  }
+
+  .mediaPc__slider {
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .mediaPc__wrapper {
+    display: flex;
+  }
+
+  .mediaPc__block {
+    width: 100%;
+    height: 400px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .mediaPc__block--text {
+    .mediaPc__overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+      color: #d13d91;
+      width: 100%;
+      padding: 20px;
+
+      h2 {
+        position: absolute;
+        top: 40%;
+        left: 20%;
+        font-size: 28px;
+        font-weight: bold;
+        font-family: "Open Sans", serif;
+        text-align: center;
+        color: $rose-sec-color;
+        z-index: 2;
+
+        span {
+          color: #fff;
+        }
+      }
+    }
+
+    .mediaPc__background {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+  &-active { background: #d13d91 !important; }
+}
+
+.whatsApp {
+  position: fixed; display: none;
+  right: rem(15); bottom: rem(15);
+  width: rem(50); height: rem(50);
+  align-items: center; justify-content: center;
+  border-radius: rem(4);
+  background-color: rgb(37, 211, 102);
+  cursor: pointer;
+  img { width: rem(30);filter: invert(1); }
+  @media (max-width: $tablet) { display: flex; }
 }

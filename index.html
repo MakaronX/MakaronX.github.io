@@ -13,6 +13,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik+Mono+One&family=Staatliches&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <!--#endregion -->
 <body class="page__body">
@@ -375,6 +380,63 @@
         <div class="media__block"></div>
       </div>
     </section>
+
+    <section class="mediaPc">
+      <div class="mediaPc__slider swiper">
+        <div class="mediaPc__wrapper swiper-wrapper">
+          <div class="mediaPc__block mediaPc__block--text swiper-slide">
+            <div class="mediaPc__overlay">
+              <h2>LATEN WE <br><span>CONTACT OPNEMEN</span></h2>
+              <img src="img/main/media/background.jpg" />
+            </div>
+          </div>
+    
+          <div class="mediaPc__block swiper-slide">
+            <img src="img/main/media/2.jpeg" alt="Dog" />
+          </div>
+    
+          <div class="mediaPc__block swiper-slide">
+            <img src="img/main/media/3.jpeg" alt="Dog" />
+          </div>
+    
+          <div class="mediaPc__block swiper-slide">
+            <img src="img/main/media/4.webp" alt="Dog" />
+          </div>
+    
+          <div class="mediaPc__block swiper-slide">
+            <img src="img/main/media/5.webp" alt="Dog" />
+          </div>
+    
+          <div class="mediaPc__block swiper-slide">
+            <img src="img/main/media/6.webp" alt="Dog" />
+          </div>
+        </div>
+    
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    
+    <script>
+      const swiper = new Swiper('.swiper', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        slidesPerView: 1,
+        spaceBetween: 10,
+        breakpoints: {
+          768: {
+            enabled: false,
+          },
+        },
+      });
+    </script>
+
+    <aside class="whatsApp">
+      <a href="https://api.whatsapp.com/message/SPR7HA7LEE7EK1?autoload=1&app_absent=0">
+        <img src="img/whatsapp.png" width="30px" height="30px" alt="whatsapp">
+      </a>
+    </aside>
   </main>
 
   <footer class="footer" id="footer">
